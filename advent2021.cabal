@@ -44,7 +44,13 @@ maintainer:         ericdfreese@gmail.com
 -- Extra files to be distributed with the package, such as examples or a README.
 extra-source-files: CHANGELOG.md
 
+common splint
+    build-depends:    splint ^>= 1.0.1.4
+    ghc-options: -fplugin=Splint
+
 library
+    import: splint
+
     -- Modules exported by the library.
     exposed-modules:  MyLib
 
@@ -64,6 +70,8 @@ library
     default-language: Haskell2010
 
 executable advent2021
+    import: splint
+
     -- .hs or .lhs file containing the Main module.
     main-is:          Main.hs
 
@@ -85,6 +93,8 @@ executable advent2021
     default-language: Haskell2010
 
 test-suite advent2021-test
+    import: splint
+
     -- Base language which the package is written in.
     default-language: Haskell2010
 
