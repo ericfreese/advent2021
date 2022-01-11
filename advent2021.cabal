@@ -95,7 +95,10 @@ test-suite advent2021-test
     hs-source-dirs:   test
 
     -- The entrypoint to the test suite.
-    main-is:          MyLibTest.hs
+    main-is:          Spec.hs
 
     -- Test dependencies.
-    build-depends:    base ^>=4.15.0.0
+    build-depends:    base ^>=4.15.0.0,
+                      hspec ^>=2.9.4
+
+    build-tool-depends: hspec-discover:hspec-discover ^>=2.9.4
