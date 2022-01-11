@@ -1,8 +1,13 @@
-module Main where
+module Main (main) where
 
-import qualified MyLib (someFunc)
+import qualified Options
+
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+    opts <- Options.parse
+    solution opts
+
+solution :: (Int, Int) -> IO ()
+solution (day, part) = do
+    putStrLn ("No solution for day " ++ show day ++ ", part " ++ show part)
