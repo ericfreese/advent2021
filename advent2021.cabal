@@ -52,7 +52,8 @@ library
     import: splint
 
     -- Modules exported by the library.
-    exposed-modules:  Sonar
+    exposed-modules:  Sonar,
+                      Submarine
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -115,6 +116,7 @@ test-suite advent2021-test
                       hspec ^>=2.9.4,
                       advent2021
 
-    other-modules: SonarSpec
+    other-modules: SonarSpec,
+                   SubmarineSpec
 
     build-tool-depends: hspec-discover:hspec-discover ^>=2.9.4
